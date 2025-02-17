@@ -1,15 +1,43 @@
 import React from "react";
 import { CUSINES } from "../../constants";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildern: 1,
+    },
+  },
+};
+
+const ItemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+};
 
 const Experties = () => {
   return (
-    <section id="experties">
+    <section id="expertise">
       <h2 className="my-8 text-center text-3xl tracking-tighter lg:text-4xl">
         Our Experties
       </h2>
-      <div className="container mx-auto px-4">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        variants={containerVariants}
+        className="container mx-auto px-4"
+      >
         {CUSINES.map((cusine, index) => (
-          <div
+          <motion.div
+            variants={ItemVariants}
             key={index}
             className="flex items-center border-b-4 border-dotted border-neutral-700/40 py-2"
           >
@@ -29,9 +57,9 @@ const Experties = () => {
                 {cusine.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
