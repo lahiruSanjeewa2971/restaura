@@ -4,6 +4,10 @@ import NavBar from "./Components/Header";
 import Dishes from "./Components/Dishes";
 import About from "./Components/CommonPages/About";
 import Mission from "./Components/CommonPages/Mission";
+import Experties from "./Components/CommonPages/Experties";
+import Review from "./Components/CommonPages/Review";
+import Contact from "./Components/CommonPages/Contact";
+import Footer from "./Components/CommonPages/Footer";
 
 const App = () => {
   return (
@@ -12,7 +16,11 @@ const App = () => {
       <NavBar />
       <Dishes />
       <About />
-      <Mission/>
+      <Mission />
+      <Experties />
+      <Review />
+      <Contact />
+      <Footer />
     </main>
   );
 };
